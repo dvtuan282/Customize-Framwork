@@ -1,0 +1,11 @@
+btnLogin:
+  android: //android.widget.Button[@content-desc='login']
+  ios: //XCUIElementTypeButton[@name='login']
+
+usernameField:
+  android: //android.widget.EditText[@content-desc='username']
+  ios: //XCUIElementTypeTextField[@name='username']
+
+passwordField:
+  android: //android.widget.EditText[@content-desc='password']
+  ios: //XCUIElementTypeTextField[@name='password']
