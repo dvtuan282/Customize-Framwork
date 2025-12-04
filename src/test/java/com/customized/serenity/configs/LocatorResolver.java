@@ -1,11 +1,10 @@
 package com.customized.serenity.configs;
 
 public class LocatorResolver {
-    public static String resolve(String expr) {
+    public static String elementAs(String expr) {
         try {
-            String clean = expr.substring(1); // remove @
 
-            String[] parts = clean.split("\\.");
+            String[] parts = expr.split("\\.");
 
             if (parts.length != 2) {
                 throw new RuntimeException("WRONG locator format: " + expr +

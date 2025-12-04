@@ -1,11 +1,11 @@
 btnLogin:
-  android: //android.widget.Button[@content-desc='login']
-  ios: //XCUIElementTypeButton[@name='login']
+  android: //android.widget.Button[@content-desc="Tap to login with given credentials"]
+  ios:
 
-usernameField:
-  android: //android.widget.EditText[@content-desc='username']
-  ios: //XCUIElementTypeTextField[@name='username']
+txtUsername:
+  android: //android.widget.EditText[@resource-id="com.saucelabs.mydemoapp.android:id/nameET"]
+  ios:
 
-passwordField:
-  android: //android.widget.EditText[@content-desc='password']
-  ios: //XCUIElementTypeTextField[@name='password']
+txtPassword:
+  android: //android.widget.EditText[@resource-id="com.saucelabs.mydemoapp.android:id/passwordET"]
+  ios:

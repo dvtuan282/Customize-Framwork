@@ -1,14 +1,23 @@
 Feature: Login
 
-#  @login_01
+  Background:
+    Given user load data to
+      | productDataTest.conf |
+
+#  @login_02
 #  Scenario: Login - user login success
-#    When user enter "tuandv" into @loginPage.username
-#    When user enter "123456" into @loginPage.password
-#    When user click to @loginPage.btnLogin
-
-
-  @login_02
-  Scenario: Login - user login success 2
-    When user login with username "tuandv28" and password "123456"
+#    When user click to @homePage.imgMenu
+#    And user click to @homePage.lblLogin
+#    And user login with username "tuandv28" and password "123456"
+#    And user click to @homePage.imgMenu
+#    And user verify status @homePage.lblLogout is "visible"
+#
+#  @login_02
+#  Scenario: Login - user login success
+#    When user click to @homePage.imgMenu
+#    And user click to @homePage.lblLogin
+#    And user login with username "tuandv28" and password "123456"
+#    And user click to @homePage.imgMenu
+#    And user verify status @homePage.lblLogout is "visible"
 
 

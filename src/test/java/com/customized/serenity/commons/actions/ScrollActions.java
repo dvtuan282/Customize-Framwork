@@ -1,29 +1,14 @@
 package com.customized.serenity.commons.actions;
 
-import io.appium.java_client.AppiumDriver;
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.webdriver.WebDriverFacade;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
+import com.customized.serenity.commons.BasePage;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 
 import java.time.Duration;
 import java.util.Collections;
 
-public class ScrollActions extends PageObject {
-    private static final Logger logger = LogManager.getLogger(ScrollActions.class);
-
-    protected AppiumDriver getAppiumDriver() {
-        WebDriver driver = getDriver();
-        return driver instanceof WebDriverFacade
-                ? (AppiumDriver) ((WebDriverFacade) driver).getProxiedDriver()
-                : (AppiumDriver) driver;
-    }
+public class ScrollActions extends BasePage {
 
     /**
      * Scroll by direction
@@ -118,16 +103,5 @@ public class ScrollActions extends PageObject {
             currentPageSource = getAppiumDriver().getPageSource();
 
         } while (!currentPageSource.equals(previousPageSource));
-    }
-
-
-    public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(elementXpath));
-        if (element == null) {
-            String msg = "Element not available: " + elementXpath;
-            logger.warn(msg);
-            throw new RuntimeException(msg);
-        }
-        return element;
     }
 }

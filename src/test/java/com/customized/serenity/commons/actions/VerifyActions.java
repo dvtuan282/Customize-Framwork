@@ -1,18 +1,11 @@
 package com.customized.serenity.commons.actions;
 
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.customized.serenity.commons.BasePage;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 
 import java.time.Duration;
 
-public class VerifyActions extends PageObject {
-    private static final Logger logger = LogManager.getLogger(VerifyActions.class);
-
-
+public class VerifyActions extends BasePage {
     /**
      * So sánh trạng thái của element trên trang ui
      *
@@ -53,21 +46,4 @@ public class VerifyActions extends PageObject {
         Assert.assertEquals(expectedText, actualText);
         logger.info("verify text element {} with {}", elementXpath, expectedText);
     }
-
-    /**
-     * Tìm WebElementFacade theo tên
-     *
-     * @param elementXpath của element
-     * @return WebElementFacade
-     */
-    public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(elementXpath));
-        if (element == null) {
-            String msg = "Element not available: " + elementXpath;
-            logger.warn(msg);
-            throw new RuntimeException(msg);
-        }
-        return element;
-    }
-
 }

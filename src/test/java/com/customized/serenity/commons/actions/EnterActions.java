@@ -1,15 +1,8 @@
 package com.customized.serenity.commons.actions;
 
-import com.customized.serenity.configs.LocatorResolver;
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
+import com.customized.serenity.commons.BasePage;
 
-public class EnterActions extends PageObject {
-
-    private static final Logger logger = LogManager.getLogger(EnterActions.class);
+public class EnterActions extends BasePage {
 
     /**
      * Enter value vào element theo xpath
@@ -56,23 +49,5 @@ public class EnterActions extends PageObject {
             logger.error("ERROR: '{}' - DETAILS: {}", elementXpath, e.getMessage(), e);
             throw e;
         }
-    }
-
-    /**
-     * Tìm WebElementFacade theo tên
-     *
-     * @param elementXpath của element
-     * @return WebElementFacade
-     */
-    public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(
-                LocatorResolver.resolve(elementXpath)
-        ));
-        if (element == null) {
-            String msg = "Element not available: " + elementXpath;
-            logger.warn(msg);
-            throw new RuntimeException(msg);
-        }
-        return element;
     }
 }

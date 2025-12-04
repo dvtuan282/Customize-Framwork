@@ -1,14 +1,9 @@
 package com.customized.serenity.commons.actions;
 
+import com.customized.serenity.commons.BasePage;
 import net.serenitybdd.core.Serenity;
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 
-public class GetAttributeElActions extends PageObject {
-    private static final Logger logger = LogManager.getLogger(GetAttributeElActions.class);
+public class GetAttributeElActions extends BasePage {
 
     /**
      * Lấy attribute của element
@@ -49,22 +44,5 @@ public class GetAttributeElActions extends PageObject {
                 break;
         }
         return valueAttribute;
-    }
-
-
-    /**
-     * Tìm WebElementFacade theo xpath
-     *
-     * @param elementXpath của element
-     * @return WebElementFacade
-     */
-    public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(elementXpath));
-        if (element == null) {
-            String msg = "Element not available: " + elementXpath;
-            logger.warn(msg);
-            throw new RuntimeException(msg);
-        }
-        return element;
     }
 }

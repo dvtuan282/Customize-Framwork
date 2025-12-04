@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-
     <Appenders>
-
-        <!-- Ghi log ra console -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss} %-5level [%t] %c - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n"/>
         </Console>
-
-        <!-- Ghi log ra file -->
-        <File name="FileLogger" fileName="logs/app.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %c - %msg%n"/>
-        </File>
-
     </Appenders>
-
     <Loggers>
-
-        <!-- Logger gốc -->
-        <Root level="info">
+<!--        <Logger name="net.serenitybdd" level="DEBUG" additivity="false">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--        </Logger>-->
+        <Logger name="io.cucumber" level="DEBUG" additivity="false">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileLogger"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
         </Root>
-
     </Loggers>
-
 </Configuration>

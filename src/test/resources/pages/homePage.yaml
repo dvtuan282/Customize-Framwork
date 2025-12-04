@@ -1,0 +1,12 @@
+imgMenu:
+  android: //android.widget.ImageView[@content-desc="View menu"]
+  ios:
+
+lblLogin:
+  android: //android.widget.TextView[@content-desc="Login Menu Item"]
+  ios:
+
+lblLogout:
+  android: //android.widget.TextView[@content-desc="Logout Menu Item"]
+  ios:
+
