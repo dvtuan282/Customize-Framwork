@@ -65,9 +65,7 @@ public class EnterActions extends PageObject {
      * @return WebElementFacade
      */
     public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(
-                LocatorResolver.resolve(elementXpath)
-        ));
+        WebElementFacade element = find(By.xpath(elementXpath));
         if (element == null) {
             String msg = "Element not available: " + elementXpath;
             logger.warn(msg);
