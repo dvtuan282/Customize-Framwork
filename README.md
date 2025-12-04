@@ -1,8 +1,8 @@
 
-## Giải thích cấu trúc dự án (package, class)
+## Các hàm common có sẵn
  - 
 
-## Các hàm common có sẵn
+## Giải thích cấu trúc dự án (package, class)
 
 - package 'bussiness' nơi chứa các class def bussiness
 - package 'commons' nơi chứa các class action common cho cả project như: click, enterTheValue, getText,.... Và class stepActions and defActions
