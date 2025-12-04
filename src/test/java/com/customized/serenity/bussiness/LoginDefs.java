@@ -1,7 +1,6 @@
 package com.customized.serenity.bussiness;
 
 import com.customized.serenity.commons.StepActions;
-import com.customized.serenity.configs.LocatorResolver;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 

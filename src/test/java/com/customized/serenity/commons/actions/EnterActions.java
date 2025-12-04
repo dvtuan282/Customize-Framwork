@@ -50,4 +50,5 @@ public class EnterActions extends BasePage {
             throw e;
         }
     }
+
 }
