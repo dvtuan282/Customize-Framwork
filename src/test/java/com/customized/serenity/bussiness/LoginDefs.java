@@ -12,8 +12,8 @@ public class LoginDefs {
 
     @When("user login with username {str} and password {str}")
     public void userLoginWithAccount(String username, String password) {
-        stepActions.enterTheValueInto(username,"loginPage.username");
-        stepActions.enterTheValueInto(password,"loginPage.passwordField");
-        stepActions.clickToElement("loginPage.username");
+        stepActions.enterTheValueInto(username,"@loginPage.username");
+        stepActions.enterTheValueInto(password,"@loginPage.passwordField");
+        stepActions.clickToElement("@loginPage.username");
     }
 }
