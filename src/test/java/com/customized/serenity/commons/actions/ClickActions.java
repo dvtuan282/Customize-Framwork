@@ -9,9 +9,9 @@ public class ClickActions extends BasePage {
      * Click vào element theo xpath
      * @param elementXpath xpath của element
      */
-    public void clickToElement(String elementXpath) {
+    public void clickToElement(Object elementXpath) {
         try {
-            findElementByXpath(elementXpath).waitUntilClickable().click();
+            findElementByXpath(elementXpath.toString()).waitUntilClickable().click();
             logger.info("Click to element: '{}'", elementXpath);
 
         } catch (Exception e) {

@@ -8,12 +8,14 @@ import org.apache.logging.log4j.Logger;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class YamlLocatorReader {
+
     private static final Logger log = LogManager.getLogger(YamlLocatorReader.class);
 
     private static final Map<String, Map<String, Object>> cache = new HashMap<>();
-    // SỬ DỤNG YAMLFactory thay vì ObjectMapper mặc định
+
     private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
     public static String getLocator(String fileName, String key) {
@@ -57,9 +59,7 @@ public class YamlLocatorReader {
                 throw new RuntimeException("YAML file NOT found: " + fileName);
             }
 
-            // Đọc YAML bằng ObjectMapper với YAMLFactory
             Map<String, Object> data = mapper.readValue(is, Map.class);
-
             cache.put(fileName, data);
 
             return data;

@@ -1,6 +1,7 @@
 package com.customized.serenity.commons;
 
 import com.customized.serenity.commons.actions.ScrollActions;
+import com.customized.serenity.configs.DynamicLocator;
 import io.appium.java_client.AppiumDriver;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -35,8 +36,8 @@ public class BasePage extends PageObject {
      * @param elementXpath của element
      * @return WebElementFacade
      */
-    public WebElementFacade findElementByXpath(String elementXpath) {
-        WebElementFacade element = find(By.xpath(elementXpath));
+    public WebElementFacade findElementByXpath(Object elementXpath) {
+        WebElementFacade element = find(By.xpath(elementXpath.toString()));
         if (element == null) {
             String msg = "Element not available: " + elementXpath;
             logger.warn(msg);

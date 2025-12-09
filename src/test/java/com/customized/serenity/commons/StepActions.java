@@ -16,27 +16,27 @@ public class StepActions {
     private ScrollActions scrollActions;
 
     @Step("click to element {0}")
-    public void clickToElement(String elementXpath) {
+    public void clickToElement(Object elementXpath) {
         clickActions.clickToElement(elementXpath);
     }
 
     @Step("enter the value {0} into {1}")
-    public void enterTheValueInto(String value, String elementXpath) {
+    public void enterTheValueInto(String value, Object elementXpath) {
         enterActions.enterTheValueInto(value, elementXpath);
     }
 
     @Step("enter the value {0} into {1} after clean text")
-    public void enterTheValueIntoAfterClean(String value, String elementXpath) {
+    public void enterTheValueIntoAfterClean(String value, Object elementXpath) {
         enterActions.enterTheValueIntoAfterClean(value, elementXpath);
     }
 
     @Step("clean data to element {0}")
-    public void cleanDataToElement(String elementXpath) {
+    public void cleanDataToElement(Object elementXpath) {
         enterActions.cleanInput(elementXpath);
     }
 
     @Step("get attribute {0} of element {1} and save to variable {2}")
-    public void getByAttributeOfElementAndSaveVariable(String attribute, String elementXpath, String variableName) {
+    public void getByAttributeOfElementAndSaveVariable(String attribute, Object elementXpath, String variableName) {
         getAttributeElActions.getByAttributeOfElementAndSaveVariable(attribute, elementXpath, variableName);
     }
 
@@ -46,7 +46,7 @@ public class StepActions {
     }
 
     @Step("scroll element {0} visible with by direction {1}")
-    public void scrollElementVisibleWithByDirection(String element, String direction) {
+    public void scrollElementVisibleWithByDirection(Object element, String direction) {
         scrollActions.scrollElementVisibleWithByDirection(element, direction);
     }
 
@@ -56,12 +56,12 @@ public class StepActions {
     }
 
     @Step("verify element {0} is {1}")
-    public void verifyStatusElement(String element, String status) {
+    public void verifyStatusElement(Object element, String status) {
         verifyActions.verifyStatusElement(element, status);
     }
 
     @Step("verify text element {0} with expected text {1}")
-    public void verifyTextElementWithExpected(String element, String expectedText) {
+    public void verifyTextElementWithExpected(Object element, String expectedText) {
         verifyActions.verifyTextElementWithExpected(element, expectedText);
     }
 
