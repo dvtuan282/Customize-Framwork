@@ -12,8 +12,8 @@ public class GetAttributeElActions extends BasePage {
      * @param element cần lấy attribute
      *
      */
-    public void getByAttributeOfElementAndSaveVariable(String attribute, String element, String variableName) {
-        String valueAttribute = getByAttributeOfElement(attribute, element);
+    public void getByAttributeOfElementAndSaveVariable(String attribute, Object element, String variableName) {
+        String valueAttribute = getByAttributeOfElement(attribute, element.toString());
         logger.info("Get {} Of Element {} As {}", element, attribute, valueAttribute);
         Serenity.setSessionVariable(variableName).to(variableName);
     }
@@ -24,20 +24,20 @@ public class GetAttributeElActions extends BasePage {
      * @param element cần lấy attribute
      *
      */
-    public String getByAttributeOfElement(String attribute, String element) {
+    public String getByAttributeOfElement(String attribute, Object element) {
         String valueAttribute = "";
         switch(attribute) {
             case "textContent":
-                valueAttribute = findElementByXpath(element).waitUntilPresent().getTextContent();
+                valueAttribute = findElementByXpath(element.toString()).waitUntilPresent().getTextContent();
                 break;
             case "text":
-                valueAttribute = findElementByXpath(element).waitUntilPresent().getText();
+                valueAttribute = findElementByXpath(element.toString()).waitUntilPresent().getText();
                 break;
             case "value":
-                valueAttribute = findElementByXpath(element).waitUntilPresent().getValue();
+                valueAttribute = findElementByXpath(element.toString()).waitUntilPresent().getValue();
                 break;
             case "tagName":
-                valueAttribute = findElementByXpath(element).waitUntilPresent().getTagName();
+                valueAttribute = findElementByXpath(element.toString()).waitUntilPresent().getTagName();
                 break;
             default:
                 logger.info("Attribute error: {}", attribute);

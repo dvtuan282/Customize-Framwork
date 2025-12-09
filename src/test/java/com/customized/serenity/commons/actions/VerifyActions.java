@@ -12,26 +12,26 @@ public class VerifyActions extends BasePage {
      * @param elementXpath của element
      * @param status trạng thái mong muốn: visible, disabled, selected, present
      */
-    public void verifyStatusElement(String elementXpath, String status) {
+    public void verifyStatusElement(Object elementXpath, String status) {
         boolean isStatus = false;
         switch (status) {
             case "visible":
-                isStatus = findElementByXpath(elementXpath).waitUntilVisible().isVisible();
+                isStatus = findElementByXpath(elementXpath.toString()).waitUntilVisible().isVisible();
                 break;
             case "disabled":
-                isStatus = findElementByXpath(elementXpath).withTimeoutOf(Duration.ofSeconds(30)).isDisabled();
+                isStatus = findElementByXpath(elementXpath.toString()).withTimeoutOf(Duration.ofSeconds(30)).isDisabled();
                 break;
             case "selected":
-                isStatus = findElementByXpath(elementXpath).withTimeoutOf(Duration.ofSeconds(30)).isSelected();
+                isStatus = findElementByXpath(elementXpath.toString()).withTimeoutOf(Duration.ofSeconds(30)).isSelected();
                 break;
             case "present":
-                isStatus = findElementByXpath(elementXpath).withTimeoutOf(Duration.ofSeconds(30)).isPresent();
+                isStatus = findElementByXpath(elementXpath.toString()).withTimeoutOf(Duration.ofSeconds(30)).isPresent();
                 break;
             default:
                 logger.warn("Status '{}' not available", status);
         }
         Assert.assertTrue("verify element " + status, isStatus);
-        logger.info("verify {} is {}: {}", elementXpath, status, isStatus);
+        logger.info("verify {} is {}: {}", elementXpath.toString(), status, isStatus);
     }
 
 
@@ -41,9 +41,9 @@ public class VerifyActions extends BasePage {
      * @param elementXpath của element
      * @param expectedText text mong muốn
      */
-    public void verifyTextElementWithExpected(String elementXpath, String expectedText) {
-        String actualText = findElementByXpath(elementXpath).waitUntilVisible().getText();
+    public void verifyTextElementWithExpected(Object elementXpath, String expectedText) {
+        String actualText = findElementByXpath(elementXpath.toString()).waitUntilVisible().getText();
         Assert.assertEquals(expectedText, actualText);
-        logger.info("verify text element {} with {}", elementXpath, expectedText);
+        logger.info("verify text element {} with {}", elementXpath.toString(), expectedText);
     }
 }

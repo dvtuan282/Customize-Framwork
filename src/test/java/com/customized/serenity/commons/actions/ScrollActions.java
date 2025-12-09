@@ -76,15 +76,15 @@ public class ScrollActions extends BasePage {
      * @param elementXpath the XPath of the element to be checked for visibility
      * @param direction    the direction to scroll: "up", "down", "left", or "right"
      */
-    public void scrollElementVisibleWithByDirection(String elementXpath, String direction) {
+    public void scrollElementVisibleWithByDirection(Object elementXpath, String direction) {
         int maxScroll = 10;
         int currentScroll = 0;
-        boolean isElementVisible = findElementByXpath(elementXpath).isVisible();
+        boolean isElementVisible = findElementByXpath(elementXpath.toString()).isVisible();
 
         while (currentScroll < maxScroll && !isElementVisible) {
             scrollByDirection(direction);
             currentScroll++;
-            isElementVisible = findElementByXpath(elementXpath).isVisible();
+            isElementVisible = findElementByXpath(elementXpath.toString()).isVisible();
         }
     }
 

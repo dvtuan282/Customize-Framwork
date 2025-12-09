@@ -1,7 +1,12 @@
 package com.customized.serenity.configs;
 
 public class LocatorResolver {
-    public static String elementAs(String expr) {
+
+    /**
+     * Resolve locator từ file YAML.
+     * Trả về DynamicLocator → có thể dùng .of() hoặc dùng như String bình thường.
+     */
+    public static DynamicLocator resolve(String expr) {
         try {
 
             String[] parts = expr.split("\\.");
@@ -14,7 +19,9 @@ public class LocatorResolver {
             String fileName = parts[0] + ".yaml";
             String key = parts[1];
 
-            return YamlLocatorReader.getLocator(fileName, key);
+            String locator = YamlLocatorReader.getLocator(fileName, key);
+
+            return new DynamicLocator(locator);
 
         } catch (Exception e) {
             throw new RuntimeException("Error resolving locator: " + expr, e);
