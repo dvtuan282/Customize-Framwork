@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = {"com.customized.serenity.commons",
                 "com.customized.serenity.commons.actions",
                 "com.customized.serenity.configs",
-                "com.customized.serenity.bussiness"}
+                "com.customized.serenity.business"}
 )
 public class CucumberStory {
 

@@ -1,0 +1,19 @@
+lblProductNameInListProduct:
+  android: //android.widget.TextView[@content-desc="Product Title" and @text="{0}"]/parent::android.view.ViewGroup
+  ios:
+
+imgProductColor:
+  android: //android.widget.ImageView[contains(@content-desc,"{0}")]
+  ios:
+
+btnIncreaseQuantity:
+  android: //android.widget.ImageView[@content-desc="Increase item quantity"]
+  ios:
+
+btnReduceQuantity:
+  android: //android.widget.ImageView[@content-desc="Decrease item quantity"]
+  ios:
+
+btnAddToCart:
+  android: //android.widget.Button[@content-desc="Tap to add product to cart"]
+  ios:

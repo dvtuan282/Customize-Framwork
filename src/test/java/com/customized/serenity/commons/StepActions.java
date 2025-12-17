@@ -15,9 +15,13 @@ public class StepActions {
 
     private ScrollActions scrollActions;
 
-    @Step("click to element {0}")
-    public void clickToElement(Object elementXpath) {
-        clickActions.clickToElement(elementXpath);
+    private SystemActions systemActions;
+
+
+    @Step("click on element {0}")
+    public void clickOnElement(Object elementXpath) {
+        scrollActions.scrollElementVisibleWithByDirection(elementXpath, "up");
+        clickActions.clickOnElement(elementXpath);
     }
 
     @Step("enter the value {0} into {1}")
@@ -63,6 +67,11 @@ public class StepActions {
     @Step("verify text element {0} with expected text {1}")
     public void verifyTextElementWithExpected(Object element, String expectedText) {
         verifyActions.verifyTextElementWithExpected(element, expectedText);
+    }
+
+    @Step("press back ")
+    public void pressBack() {
+        systemActions.pressBack();
     }
 
 }

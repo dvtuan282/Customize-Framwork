@@ -10,3 +10,7 @@ lblLogout:
   android: //android.widget.TextView[@content-desc="Logout Menu Item"]
   ios:
 
+iconCart:
+  android: //android.widget.RelativeLayout[@content-desc="View cart"]
+  ios:
+

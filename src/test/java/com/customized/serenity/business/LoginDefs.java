@@ -15,6 +15,6 @@ public class LoginDefs {
     public void userLoginWithAccount(String username, String password) {
         stepActions.enterTheValueInto(username, resolve("loginPage.txtUsername"));
         stepActions.enterTheValueInto(password,resolve("loginPage.txtPassword"));
-        stepActions.clickToElement(resolve("loginPage.btnLogin"));
+        stepActions.clickOnElement(resolve("loginPage.btnLogin"));
     }
 }

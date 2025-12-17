@@ -16,9 +16,9 @@ public class StepDefinitions {
         table.asList().forEach(file -> DataResolver.load(file.trim()));
     }
 
-    @When("user click to {str}")
+    @When("user click on {str}")
     public void clickToElement(Object elementLocator) {
-        stepActions.clickToElement(elementLocator);
+        stepActions.clickOnElement(elementLocator);
     }
 
     @When("user enter {str} into {str}")
