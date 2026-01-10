@@ -1,0 +1,7 @@
+lblProductByName:
+  android: //android.widget.TextView[@text="{0}"]
+
+lblProductQuantity:
+  android: //android.widget.TextView[@text="{0}"]
+
+

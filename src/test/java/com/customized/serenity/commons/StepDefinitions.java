@@ -16,23 +16,23 @@ public class StepDefinitions {
         table.asList().forEach(file -> DataResolver.load(file.trim()));
     }
 
-    @When("user click to {str}")
-    public void clickToElement(String elementLocator) {
-        stepActions.clickToElement(elementLocator);
+    @When("user click on {str}")
+    public void clickToElement(Object elementLocator) {
+        stepActions.clickOnElement(elementLocator);
     }
 
     @When("user enter {str} into {str}")
-    public void enterValueInto(String value, String elementLocator) {
+    public void enterValueInto(String value, Object elementLocator) {
         stepActions.enterTheValueInto(value, elementLocator);
     }
 
     @When("user enter {str} into {str} after clean text")
-    public void enterValueAfterClean(String value, String elementLocator) {
+    public void enterValueAfterClean(String value, Object elementLocator) {
         stepActions.enterTheValueIntoAfterClean(value, elementLocator);
     }
 
     @When("user clear text in {str}")
-    public void clearText(String elementLocator) {
+    public void clearText(Object elementLocator) {
         stepActions.cleanDataToElement(elementLocator);
     }
 

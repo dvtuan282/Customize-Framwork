@@ -9,12 +9,17 @@ public class ParameterType {
      */
     @io.cucumber.java.ParameterType(".*")
     public String str(String value) {
+
         if (value.startsWith("@")) {
-            return LocatorResolver.elementAs(value.substring(1));
-        } else if (value.startsWith("$")) {
+            return LocatorResolver.resolve(value.substring(1)).toString();
+        }
+        else if (value.startsWith("$")) {
+            // Resolver dữ liệu
             return DataResolver.resolve(value);
         }
-        // Loại bỏ dấu nháy nếu input bình thường: "abc"
+
+        // Bỏ dấu nháy nếu có
         return value.replaceAll("^\"|\"$", "");
     }
+
 }
